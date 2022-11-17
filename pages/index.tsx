@@ -1,13 +1,11 @@
-import { Key, useEffect, useState } from "react";
-import Img from "../components/Image";
-// import Image from "next/image";
+import { Key } from "react";
 
+import { Article } from "./Article";
 import Layout from "../sections/Layout";
+import { dataTest } from "./testData";
 
-import styles from "../styles/Home.module.css";
-
-type ArticleProps = {
-  id: Key | null | undefined;
+export type ArticleProps = {
+  id: string | number | boolean | Key;
   address: string;
   benefits: string;
   createdAt: string;
@@ -16,35 +14,36 @@ type ArticleProps = {
   pictures: string[];
 };
 
-const Home = () => {
-  const [list, setList] = useState<ArticleProps[]>();
-  useEffect(() => {
-    fetch(
-      "https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu"
-    )
-      .then((resp) => resp.json())
-      .then((json) => setList(json));
-  }, []);
+export const getServerSideProps = async () => {
+  const response = await fetch(
+    "https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu"
+  );
+  const data = await response.json();
 
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { articles: data },
+  };
+};
+const Home = ({ articles }: any) => {
+  console.log(articles);
   return (
     <Layout>
-      <div className={styles.container}>
-        <ul>
-          {list &&
-            list.map((article: ArticleProps) => {
-              const myLoader = ({ src }: any) => {
-                return src;
-              };
-
-              return (
-                <li key={article.id}>
-                  <Img src={article.pictures[1]} />
-                  <p>{article.description}</p>
-                  <p>{article.address}</p>
-                </li>
-              );
-            })}
-        </ul>
+      <div className="container flex justify-center items-center py-4 container w-4/5">
+        {articles ? (
+          <ul className="">
+            {articles.map((article: ArticleProps) => (
+              <Article article={article} key={article.id} />
+            ))}
+          </ul>
+        ) : (
+          <div>Loading...</div>
+        )}
       </div>
     </Layout>
   );

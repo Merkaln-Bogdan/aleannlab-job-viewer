@@ -1,14 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "ProxymaNova";
+  src: local("ProxymaNova"),
+    url("./fonts/ProximaNova-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "ProxymaNova";
+  font-size: 1rem;
+  background-color: #e6e9f2;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  text-transform: uppercase;
 }
 
 * {
@@ -21,6 +37,5 @@ a {
   }
   body {
     color: white;
-    background: black;
   }
 }

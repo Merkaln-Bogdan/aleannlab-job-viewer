@@ -1,17 +1,22 @@
 import Image from "next/image";
 
-const imgLoader = ({ src }: any) => {
-  return src;
+const imgLoader = ({ src, width, quality }: any) => {
+  return `${src}?w=${width}&q=${quality || 75}`;
 };
 
-const Img = ({ src }: any) => {
+const Img = ({ src, width, height, className }: any) => {
   return (
     <Image
       loader={imgLoader}
       src={src}
       alt="mini_post"
-      width={50}
-      height={50}
+      width={width}
+      height={height}
+      style={{
+        width: width,
+        height: height,
+      }}
+      className={className}
     />
   );
 };
