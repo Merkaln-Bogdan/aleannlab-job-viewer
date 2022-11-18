@@ -21,4 +21,4 @@ const Img = ({ src, width, height, className }: any) => {
   );
 };
 
-export default Img;
+export { Img };

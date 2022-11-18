@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Icon } from "../components/Icon";
 
-import Img from "../components/Image";
+import { Img } from "../components/Image";
 
 const Article = ({ article }: any) => {
   return (

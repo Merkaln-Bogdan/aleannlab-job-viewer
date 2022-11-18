@@ -4,6 +4,8 @@ type LayoutProps = {
   children: ReactNode;
 };
 
-const Layout = ({ children }: LayoutProps) => <div>{children}</div>;
+const Layout = ({ children }: LayoutProps) => (
+  <div className="font-bold text-dark">{children}</div>
+);
 
 export default Layout;

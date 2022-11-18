@@ -14,6 +14,7 @@ module.exports = {
       transparent: "transparent",
       white: "#ffffff",
       lightgray: "#878d9d",
+      light: "rgba(58,69,98,0.12)",
       metal: "#565584",
       tahiti: "#3ab7bf",
       silver: "#ecebff",
@@ -25,7 +26,13 @@ module.exports = {
       xs: { min: "455px", max: "648px" },
       lg: "1024px",
     },
-    extend: {},
+    extend: {
+      borderOpacity: {
+        10: "0.1",
+        20: "0.2",
+        95: "0.95",
+      },
+    },
   },
   plugins: [],
 };

@@ -16,7 +16,7 @@ export function Button(props: ButtonProps): React.ReactElement {
   return (
     <button
       disabled={disabled}
-      className={className}
+      className={className || "py-4 px-7 bg-dark text-white text-xs rounded-lg"}
       type={type}
       value={value}
       name={name}
