@@ -4,15 +4,16 @@ import { Headline } from "./Headline";
 type InfoProps = {
   children: ReactNode;
   label?: string;
+  className?: string;
 };
 
 export function Info(props: InfoProps): React.ReactElement {
-  const { children, label } = {
+  const { children, label, className } = {
     ...props,
   };
 
   return (
-    <div className="flex flex-col text-dark mb-10">
+    <div className={`text-dark mb-10 ${className}`}>
       {label && (
         <Headline className="mb-4 font-bold text-dark">{label}</Headline>
       )}

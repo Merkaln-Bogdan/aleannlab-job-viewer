@@ -5,7 +5,7 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => (
-  <div className="font-bold text-dark">{children}</div>
+  <div className="text-dark">{children}</div>
 );
 
 export default Layout;

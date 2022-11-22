@@ -19,6 +19,6 @@ export function Icon(props: IconProps): React.ReactElement {
       {label}
     </span>
   ) : (
-    <Tag {...rest} />
+    <Tag {...rest} className={className} />
   );
 }

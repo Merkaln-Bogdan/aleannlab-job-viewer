@@ -1,4 +1,4 @@
-export type ButtonProps = React.DetailedHTMLProps<
+type ButtonProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 >;
@@ -8,7 +8,7 @@ const defaultProps: Partial<ButtonProps> = {
 };
 
 export function Button(props: ButtonProps): React.ReactElement {
-  const { children, className, disabled, type, value, name } = {
+  const { children, className, disabled, type, value, name, onClick } = {
     ...defaultProps,
     ...props,
   };
@@ -16,10 +16,11 @@ export function Button(props: ButtonProps): React.ReactElement {
   return (
     <button
       disabled={disabled}
-      className={className || "py-4 px-7 bg-dark text-white text-xs rounded-lg"}
+      className={`flex py-4 px-7 text-xs rounded-lg ${className}`}
       type={type}
       value={value}
       name={name}
+      onClick={onClick}
     >
       {children}
     </button>
