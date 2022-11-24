@@ -34,7 +34,7 @@ module.exports = {
     },
 
     maxWidth: {
-      max_cus: "30rem",
+      max_cus: "47rem",
     },
 
     extend: {

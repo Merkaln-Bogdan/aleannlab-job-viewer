@@ -14,9 +14,11 @@ const Rate = dynamic(() => import("../components/Rating"), {
 const Img = dynamic(() => import("../components/Image"), {
   ssr: false,
 });
+
 export type ArticleProps = {
   article: ArticleType;
 };
+
 const Article = (props: ArticleProps) => {
   const { article } = { ...props };
   const { id, pictures, title, createdAt } = article;
