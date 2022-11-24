@@ -11,7 +11,7 @@ import { Picker } from "../../sections/Picker";
 import { Icon } from "../../components/Icon";
 import { Layout } from "../../sections/Layout";
 import { ArticleType } from "..";
-import { ArticleProps } from "../Article";
+import { ArticleProps } from "../../sections/Article";
 
 export const getServerSideProps = async (context: {
   params: { id: string };

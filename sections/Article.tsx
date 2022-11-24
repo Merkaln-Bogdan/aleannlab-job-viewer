@@ -1,11 +1,11 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { calculationDate } from "../helpers/datingHooks";
-import { phoneBreakpoint } from "../sections/Header";
+import { phoneBreakpoint } from "./Header";
 
 import { Headline } from "../components/Headline";
 import { Icon } from "../components/Icon";
-import { ArticleType } from ".";
+import { ArticleType } from "../pages";
 
 const Rate = dynamic(() => import("../components/Rating"), {
   ssr: false,

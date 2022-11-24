@@ -1,4 +1,4 @@
-import { Article } from "./Article";
+import { Article } from "../sections/Article";
 import { Layout } from "../sections/Layout";
 
 export type ArticleType = {
