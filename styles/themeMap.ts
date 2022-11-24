@@ -46,7 +46,7 @@ export const defaultTheme = [
         visibility: "on",
       },
       {
-        color: "#7986b9",
+        color: "#878d9d",
       },
       {
         lightness: "-70",
@@ -67,7 +67,7 @@ export const defaultTheme = [
     elementType: "geometry.fill",
     stylers: [
       {
-        color: "#3A4562",
+        color: "#878d9d",
       },
     ],
   },
@@ -76,7 +76,7 @@ export const defaultTheme = [
     elementType: "geometry.stroke",
     stylers: [
       {
-        color: "#3A4562",
+        color: "#878d9d",
       },
       {
         lightness: "-66",
@@ -103,7 +103,7 @@ export const defaultTheme = [
         lightness: "43",
       },
       {
-        color: "#4872b5",
+        color: "#878d9d",
       },
     ],
   },
@@ -112,7 +112,7 @@ export const defaultTheme = [
     elementType: "labels.text.stroke",
     stylers: [
       {
-        color: "#4872b5",
+        color: "#878d9d",
       },
       {
         lightness: "-69",

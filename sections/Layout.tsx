@@ -8,4 +8,4 @@ const Layout = ({ children }: LayoutProps) => (
   <div className="text-dark">{children}</div>
 );
 
-export default Layout;
+export { Layout };

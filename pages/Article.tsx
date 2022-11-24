@@ -1,30 +1,41 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
+import { calculationDate } from "../helpers/datingHooks";
+import { phoneBreakpoint } from "../sections/Header";
+
 import { Headline } from "../components/Headline";
 import { Icon } from "../components/Icon";
+import { ArticleType } from ".";
 
-import { Img } from "../components/Image";
-import { Rate } from "../components/Rating";
-import { calculationDate } from "../helpers/datingHooks";
+const Rate = dynamic(() => import("../components/Rating"), {
+  ssr: false,
+});
 
-const Article = ({ article }: any) => {
+const Img = dynamic(() => import("../components/Image"), {
+  ssr: false,
+});
+export type ArticleProps = {
+  article: ArticleType;
+};
+const Article = (props: ArticleProps) => {
+  const { article } = { ...props };
+  const { id, pictures, title, createdAt } = article;
+  const widthImage = phoneBreakpoint ? 55 : 85;
   return (
     <li
-      key={article.id}
+      key={id}
       className="flex mb-2 bg-white px-4 py-6 rounded-lg items-center shadow shadow-el-sdw sm:flex-col-reverse sm:bg-bg_light"
     >
       <div className="flex">
         <Img
-          src={article.pictures[1]}
-          width={85}
-          height={85}
-          className="rounded-full w-14 h-14"
+          src={pictures[1]}
+          width={widthImage}
+          height={phoneBreakpoint ? 55 : 85}
+          className="rounded-full"
         />
 
-        <Link
-          href={`/article/${article.id}`}
-          className="mx-8 sm:w-250px sm:mx-4"
-        >
-          <p className="font-bold text-dark text-base">{article.title}</p>
+        <Link href={`/article/${id}`} className="mx-8 sm:w-72 sm:mx-4">
+          <p className="font-bold text-dark text-base">{title}</p>
           <div className="text-lightgray font-light">
             <p>
               Department name &#8226; Allgemeines Krankenhaus der Stadt Wien -
@@ -40,10 +51,11 @@ const Article = ({ article }: any) => {
 
       <div className="text-lightgray flex justify-between ml-auto sm:m-0">
         <Rate rate={4} />
-        <div className="flex flex-col justify-between w-40 items-end">
+
+        <div className="flex flex-col justify-between h-20 w-40 items-end sm:h-auto">
           <Icon name="BsBookmark" className="sm:hidden" />
           <Headline as="p">
-            posted {calculationDate(article.updatedAt).postedDate} ago
+            posted {calculationDate(createdAt).postedDate} ago
           </Headline>
         </div>
       </div>

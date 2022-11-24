@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 
 import { Headline } from "../components/Headline";
-import { Img } from "../components/Image";
+import Img from "../components/Image";
 
 type PickerProps = {
   data: string[];

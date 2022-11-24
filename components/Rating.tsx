@@ -4,10 +4,9 @@ import { Rating } from "react-simple-star-rating";
 
 type RateProps = {
   rate: number;
-  // className: string;
 };
 
-export function Rate(props: RateProps) {
+function Rate(props: RateProps) {
   const { rate } = { ...props };
   const [rating, setRating] = useState(rate);
 
@@ -15,8 +14,8 @@ export function Rate(props: RateProps) {
     setRating(rate);
   };
 
-  const onPointerEnter = () => console.log("Enter");
-  const onPointerLeave = () => console.log("Leave");
+  const onPointerEnter = () => null;
+  const onPointerLeave = () => null;
   const onPointerMove = (value: number, index: number) =>
     console.log(value, index);
 
@@ -27,8 +26,10 @@ export function Rate(props: RateProps) {
       onPointerLeave={onPointerLeave}
       onPointerMove={onPointerMove}
       size={12}
-      fillStyle={{ display: "flex" }}
+      fillStyle={{ display: "flex", margin: "0" }}
       emptyStyle={{ display: "flex", margin: "0" }}
     />
   );
 }
+
+export default Rate;

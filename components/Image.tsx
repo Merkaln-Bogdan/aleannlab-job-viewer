@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const imgLoader = ({ src, width, quality }: any) => {
-  return `${src}?w=${width}&q=${quality || 75}`;
+  return `${src}?w=${width}&q=${quality || 55}`;
 };
 
 const Img = ({ src, width, height, className }: any) => {
@@ -21,4 +21,4 @@ const Img = ({ src, width, height, className }: any) => {
   );
 };
 
-export { Img };
+export default Img;

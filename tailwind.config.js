@@ -14,21 +14,18 @@ module.exports = {
       transparent: "transparent",
       white: "#ffffff",
       lightgray: "#878d9d",
-      el_shadow:
-        "2px 1px 7px rgba(0, 0, 0, 0.08), 0px 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12)",
       light: "rgba(58,69,98,0.12)",
       light_blue: "#e6e9f2",
+      b_light: "rgba(85, 105, 158, 0.3)",
+      bg_light: "#eff0f5",
 
-      metal: "#565584",
       dark_yellow: "#988B49",
       yellow: "#FFCF00",
       light_yellow: "rgba(255, 207, 0, 0.15)",
+
       bg_dark: "#202336",
-      b_light: "rgba(85, 105, 158, 0.3)",
-      bg_light: "#EFF0F5",
-      silver: "#ecebff",
-      bubblegum: "#ff77e9",
-      bermuda: "#78dcca",
+      bg_map: "#2A3047",
+
       dark: "#3A4562",
     },
     screens: {
@@ -46,8 +43,9 @@ module.exports = {
           "2px 1px 7px rgba(0, 0, 0, 0.08), 0px 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12)",
       },
       spacing: {
-        mar_min_lg: "-90px",
-        mar_min_mid: "-50px",
+        mar_min_lg: "-80px",
+        mar_min_md: "-50px",
+        mar_top_mid: "4.5rem",
       },
     },
   },

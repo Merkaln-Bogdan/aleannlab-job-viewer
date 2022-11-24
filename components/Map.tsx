@@ -5,8 +5,17 @@ import { defaultTheme } from "../styles/themeMap";
 
 import { Headline } from "./Headline";
 import { Icon } from "./Icon";
+import { type } from "os";
+import { MapInfo } from "../sections/MapInfo";
 
-const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+type LocationObj = {
+  lat: number;
+  long: number;
+};
+
+type MapProps = {
+  center: LocationObj;
+};
 
 const defaulOptions = {
   zoomControl: true,
@@ -30,7 +39,8 @@ const defaultCenter = {
   lng: 16.352566,
 };
 
-const Map = ({ center }: any) => {
+const Map = (props: MapProps) => {
+  const { center } = { ...props };
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyDIsWcwptbQZ5jBvEHvuB1AjCeWaXOoWRo",
@@ -61,16 +71,7 @@ const Map = ({ center }: any) => {
       onUnmount={onUnmount}
       options={defaulOptions}
     >
-      <div className="absolute flex flex-col justify-center px-6 py-7 w-full h-2/4 bg-dark text-white z-50 hover:hidden">
-        <div className="absolute w-40 h-40 bg-bg_dark rounded-full z-40"> </div>
-        <Headline as="p" className="font-bold">
-          Department name. University Hospital Giessen.
-        </Headline>
-        <Headline as="p" className="flex">
-          <Icon name="BsGeoAltFill" label="AKH Wien, 1090 Wien, Währinger" />
-        </Headline>
-        Gürtel 18-20 +43 (01) 40400-12090, post_akh_diz@akhwien.at
-      </div>
+      <MapInfo />
     </GoogleMap>
   ) : (
     <>Loading...</>
