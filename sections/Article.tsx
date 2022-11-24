@@ -49,7 +49,7 @@ const Article = (props: ArticleProps) => {
         </Link>
       </div>
 
-      <div className="text-lightgray flex justify-between ml-auto sm:m-0">
+      <div className="flex justify-between items-center ml-auto text-lightgray sm:m-0">
         <Rate rate={4} />
 
         <div className="flex flex-col justify-between h-20 w-40 items-end sm:h-auto">
