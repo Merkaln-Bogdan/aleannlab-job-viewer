@@ -33,8 +33,8 @@ module.exports = {
       lg: "648px",
     },
 
-    minWidth: {
-      mw_title: "250",
+    maxWidth: {
+      max_cus: "30rem",
     },
 
     extend: {

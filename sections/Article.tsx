@@ -34,7 +34,10 @@ const Article = (props: ArticleProps) => {
           className="rounded-full"
         />
 
-        <Link href={`/article/${id}`} className="mx-8 sm:w-72 sm:mx-4">
+        <Link
+          href={`/article/${id}`}
+          className="max-w-max_cus mx-8 sm:w-72 sm:mx-4"
+        >
           <p className="font-bold text-dark text-base">{title}</p>
           <div className="text-lightgray font-light">
             <p>

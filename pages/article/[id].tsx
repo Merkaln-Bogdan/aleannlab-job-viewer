@@ -13,23 +13,25 @@ import { Layout } from "../../sections/Layout";
 import { ArticleType } from "..";
 import { ArticleProps } from "../../sections/Article";
 
+import { dataTest } from "../api/testData";
+
 export const getServerSideProps = async (context: {
   params: { id: string };
 }) => {
   const { id } = context.params;
   // should be request with id
-  const response = await fetch(
-    "https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=AIzaSyDIsWcwptbQZ5jBvEHvuB1AjCeWaXOoWRo" ///should be proccess.env.API_KEY
-  );
-  const data = await response.json();
+  // const response = await fetch(
+  //   "https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=AIzaSyDIsWcwptbQZ5jBvEHvuB1AjCeWaXOoWRo" ///should be proccess.env.API_KEY
+  // );
+  // const data = await response.json();
 
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
+  // if (!data) {
+  //   return {
+  //     notFound: true,
+  //   };
+  // }
 
-  const article = data?.filter((el: ArticleType) => el.id === id)[0];
+  const article = dataTest?.filter((el) => el.id === id)[0];
 
   return {
     props: { article: article },
