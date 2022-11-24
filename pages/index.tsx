@@ -16,7 +16,7 @@ export type ArticleType = {
 
 export const getServerSideProps = async () => {
   const response = await fetch(
-    `https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=${process.env.NEXT_PUBLIC_API_KEY}`
+    "https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=AIzaSyDIsWcwptbQZ5jBvEHvuB1AjCeWaXOoWRo" ///should be proccess.env.API_KEY
   );
   const data = await response.json();
 

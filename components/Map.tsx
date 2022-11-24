@@ -43,7 +43,7 @@ const Map = (props: MapProps) => {
   const { center } = { ...props };
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyDIsWcwptbQZ5jBvEHvuB1AjCeWaXOoWRo",
+    googleMapsApiKey: "AIzaSyDIsWcwptbQZ5jBvEHvuB1AjCeWaXOoWRo", /// should be proccess.env.NEXT_PUBLIC_GOOGLE_API_KEY
     libraries: ["places"],
   });
 

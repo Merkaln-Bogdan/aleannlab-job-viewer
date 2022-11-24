@@ -19,7 +19,7 @@ export const getServerSideProps = async (context: {
   const { id } = context.params;
   // should be request with id
   const response = await fetch(
-    `https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=${process.env.NEXT_PUBLIC_API_KEY}`
+    "https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=AIzaSyDIsWcwptbQZ5jBvEHvuB1AjCeWaXOoWRo" ///should be proccess.env.API_KEY
   );
   const data = await response.json();
 
