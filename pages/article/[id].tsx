@@ -53,7 +53,7 @@ const Details = ({ article }: ArticleProps) => {
 
   return (
     <Layout>
-      <div className="max-w-6xl m-auto flex py-14 sm:flex-col sm:px-4">
+      <div className="max-w-5xl flex justify-center py-14 sm:flex-col sm:px-4">
         <div className="w-4/6 mx-20 sm:mr-0 sm:w-full sm:mx-0">
           <main className="mt-5">
             <Header title="Job Details" />

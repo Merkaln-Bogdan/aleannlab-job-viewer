@@ -29,16 +29,18 @@ const Article = (props: ArticleProps) => {
       className="flex mb-2 bg-white px-4 py-6 rounded-lg items-center shadow shadow-el-sdw sm:flex-col-reverse sm:bg-bg_light"
     >
       <div className="flex">
+        {/* <div className="relative h-20 w-20"> */}
         <Img
           src={pictures[1]}
           width={widthImage}
-          height={phoneBreakpoint ? 55 : 85}
-          className="rounded-full"
+          height={widthImage}
+          className="block rounded-full"
         />
+        {/* </div> */}
 
         <Link
           href={`/article/${id}`}
-          className="max-w-max_cus mx-8 sm:w-72 sm:mx-4"
+          className="max-w-max_width_link mx-8 sm:w-72 sm:mx-4"
         >
           <p className="font-bold text-dark text-base">{title}</p>
           <div className="text-lightgray font-light">

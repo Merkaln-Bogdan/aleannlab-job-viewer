@@ -17,6 +17,7 @@ const Img = ({ src, width, height, className }: any) => {
         height: height,
       }}
       className={className}
+      // fill
     />
   );
 };
