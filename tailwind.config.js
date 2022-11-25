@@ -29,12 +29,13 @@ module.exports = {
       dark: "#3A4562",
     },
     screens: {
-      sm: { min: "396px", max: "647px" },
+      sm: { min: "320px", max: "647px" },
       lg: "648px",
     },
 
     maxWidth: {
-      max_width_link: "37.5rem",
+      max_width_link: "83%",
+      max_phone_width_link: "65%",
     },
 
     extend: {

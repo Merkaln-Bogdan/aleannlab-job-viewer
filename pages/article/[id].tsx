@@ -10,7 +10,7 @@ import { Info } from "../../components/Info";
 import { Picker } from "../../sections/Picker";
 import { Icon } from "../../components/Icon";
 import { Layout } from "../../sections/Layout";
-import { ArticleType } from "..";
+
 import { ArticleProps } from "../../sections/Article";
 
 import { dataTest } from "../api/testData";
