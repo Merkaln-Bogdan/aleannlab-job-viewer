@@ -1,11 +1,13 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
+
 import { calculationDate } from "../helpers/datingHooks";
 import { phoneBreakpoint } from "./Header";
 
+import { ArticleType } from "../types/common.types";
+
 import { Headline } from "../components/Headline";
 import { Icon } from "../components/Icon";
-import { ArticleType } from "../pages";
 
 const Rate = dynamic(() => import("../components/Rating"), {
   ssr: false,
@@ -21,6 +23,7 @@ export type ArticleProps = {
 
 const Article = (props: ArticleProps) => {
   const { article } = { ...props };
+
   const { id, pictures, title, createdAt } = article;
   const widthImage = phoneBreakpoint ? 55 : 85;
 

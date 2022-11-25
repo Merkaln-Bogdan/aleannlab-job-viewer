@@ -13,6 +13,7 @@ const dataTest = [
     description:
       "Reprehenderit Lorem consectetur non et minim adipisicing deserunt. Ipsum reprehenderit do pariatur proident esse sint magna ullamco qui minim. Anim Lorem ut laborum occaecat culpa consectetur reprehenderit aliquip ex cupidatat proident quis laborum. Nulla aute ipsum et anim. Responsopilities: Ex qui consequat deserunt laborum cupidatat ut ullamco veniam minim nisi incididunt aliquip incididunt. Sunt sunt ullamco elit ipsum ea enim consectetur sit magna minim ea cupidatat. Et ut proident voluptate quis nulla anim commodo in pariatur ad. Compensation & Benefits: Incididunt et sint incididunt laboris duis. Deserunt consectetur sint aute et sint aliqua quis nostrud non elit aliqua elit tempor. Aliquip ad dolore proident eu consequat elit amet laborum aute excepteur sit labore.",
     email: "test@mail.com",
+    location: { lat: 48.22544, long: 16.352566 },
     pictures: [
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300",
@@ -28,7 +29,7 @@ const dataTest = [
     email: "sureplex@gmail.bo",
     employment_type: ["Full time"],
     id: "635ee6d304601d61a71951f6",
-    location: { lat: 9.804124, long: 147.139488 },
+    location: { lat: 50.447731, long: 30.542721 },
     name: "Sureplex",
     phone: "+97117307890",
     pictures: [

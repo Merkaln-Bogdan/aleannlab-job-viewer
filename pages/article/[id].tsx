@@ -21,7 +21,7 @@ export const getServerSideProps = async (context: {
   const { id } = context.params;
   // should be request with id
   // const response = await fetch(
-  //   "https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=AIzaSyDIsWcwptbQZ5jBvEHvuB1AjCeWaXOoWRo" ///should be proccess.env.API_KEY
+  //   `https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=${proccess.env.NEXT_PUBLIC_API_KEY}`
   // );
   // const data = await response.json();
 
@@ -47,10 +47,11 @@ const Details = ({ article }: ArticleProps) => {
     employment_type,
     createdAt,
     title,
+    location,
   } = article;
 
   const router = useRouter();
-
+  console.log(location);
   return (
     <Layout>
       <div className="max-w-5xl flex justify-center py-14 px-4 sm:flex-col">
@@ -134,7 +135,7 @@ const Details = ({ article }: ArticleProps) => {
         <Headline className="inline-block w-full mb-4 pb-2.5 mt-20 text-2xl font-bold border-b border-solid border-light lg:hidden">
           Contacts
         </Headline>
-        <Map center={{ lat: 103.323006, long: -29.850569 }} />
+        <Map center={location} info={article} />
       </div>
     </Layout>
   );

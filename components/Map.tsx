@@ -3,19 +3,8 @@ import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
 import { defaultTheme } from "../styles/themeMap";
 
-import { Headline } from "./Headline";
-import { Icon } from "./Icon";
-import { type } from "os";
 import { MapInfo } from "../sections/MapInfo";
-
-type LocationObj = {
-  lat: number;
-  long: number;
-};
-
-type MapProps = {
-  center: LocationObj;
-};
+import { ArticleType, LocationType } from "../types/common.types";
 
 const defaulOptions = {
   zoomControl: true,
@@ -39,8 +28,13 @@ const defaultCenter = {
   lng: 16.352566,
 };
 
+type MapProps = {
+  center: LocationType;
+  info: ArticleType;
+};
+
 const Map = (props: MapProps) => {
-  const { center } = { ...props };
+  const { center, info } = { ...props };
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyDIsWcwptbQZ5jBvEHvuB1AjCeWaXOoWRo", /// should be proccess.env.NEXT_PUBLIC_GOOGLE_API_KEY
@@ -65,13 +59,13 @@ const Map = (props: MapProps) => {
   return isLoaded ? (
     <GoogleMap
       mapContainerStyle={containerStyle}
-      center={defaultCenter || formatedCenter}
+      center={formatedCenter || defaultCenter}
       zoom={10}
       onLoad={onLoad}
       onUnmount={onUnmount}
       options={defaulOptions}
     >
-      <MapInfo />
+      <MapInfo info={info} />
     </GoogleMap>
   ) : (
     <>Loading...</>

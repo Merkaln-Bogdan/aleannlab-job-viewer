@@ -1,23 +1,13 @@
 import { dataTest } from "./api/testData";
+
+import { ArticleType } from "../types/common.types";
+
 import { Article } from "../sections/Article";
 import { Layout } from "../sections/Layout";
 
-export type ArticleType = {
-  id: string | number;
-  address: string;
-  benefits: [];
-  title: string;
-  createdAt: string;
-  description: string;
-  email: string;
-  pictures: string[];
-  salary: string;
-  employment_type: [];
-};
-
 export const getServerSideProps = async () => {
   // const response = await fetch(
-  //   "https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=AIzaSyDIsWcwptbQZ5jBvEHvuB1AjCeWaXOoWRo" ///should be proccess.env.API_KEY
+  //   `https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=${proccess.env.NEXT_PUBLIC_API_KEY}`
   // );
   // const data = await response.json();
 
