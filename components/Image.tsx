@@ -1,11 +1,10 @@
 import Image from "next/image";
 
 const imgLoader = ({ src, width, quality }: any) => {
-  console.log(width, quality);
   return `${src}?w=${width}&q=${quality || 55}`;
 };
 
-const Img = ({ src, width, height, className, wrapperStyles }: any) => {
+const Img = ({ src, width, height, className }: any) => {
   return (
     <Image
       loader={imgLoader}

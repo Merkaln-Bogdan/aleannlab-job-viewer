@@ -34,7 +34,7 @@ module.exports = {
     },
 
     maxWidth: {
-      max_width_link: "83%",
+      max_width_link: "70%",
       max_phone_width_link: "65%",
     },
 

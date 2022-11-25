@@ -34,7 +34,6 @@ const Article = (props: ArticleProps) => {
           src={pictures[1]}
           width={widthImage}
           height={widthImage}
-          wrapperStyles=""
           className="rounded-full"
         />
 
