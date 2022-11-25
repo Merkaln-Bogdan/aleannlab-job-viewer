@@ -23,20 +23,19 @@ const Article = (props: ArticleProps) => {
   const { article } = { ...props };
   const { id, pictures, title, createdAt } = article;
   const widthImage = phoneBreakpoint ? 55 : 85;
+
   return (
     <li
       key={id}
       className="flex mb-2 bg-white px-4 py-6 rounded-lg items-center shadow shadow-el-sdw sm:flex-col-reverse sm:bg-bg_light"
     >
       <div className="flex">
-        {/* <div className="relative h-20 w-20"> */}
         <Img
           src={pictures[1]}
           width={widthImage}
           height={widthImage}
           className="block rounded-full"
         />
-        {/* </div> */}
 
         <Link
           href={`/article/${id}`}
